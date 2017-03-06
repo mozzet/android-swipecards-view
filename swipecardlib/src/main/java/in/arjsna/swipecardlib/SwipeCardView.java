@@ -26,6 +26,8 @@ public class SwipeCardView extends BaseFlingAdapterView {
 
     protected boolean DETECT_LEFT_SWIPE;
 
+    protected boolean ENABLE_TOUCH_CONTROL;
+
     private float CURRENT_TRANSY_VAL = 0;
 
     private float CURRENT_SCALE_VAL = 0;
@@ -80,6 +82,7 @@ public class SwipeCardView extends BaseFlingAdapterView {
         DETECT_RIGHT_SWIPE = a.getBoolean(R.styleable.SwipeCardView_right_swipe_detect, true);
         DETECT_BOTTOM_SWIPE = a.getBoolean(R.styleable.SwipeCardView_bottom_swipe_detect, true);
         DETECT_TOP_SWIPE = a.getBoolean(R.styleable.SwipeCardView_top_swipe_detect, true);
+        ENABLE_TOUCH_CONTROL = a.getBoolean(R.styleable.SwipeCardView_enable_touch_control, true);
         a.recycle();
     }
 
@@ -333,7 +336,11 @@ public class SwipeCardView extends BaseFlingAdapterView {
                     }
                 });
 
-                mActiveCard.setOnTouchListener(flingCardListener);
+                if (ENABLE_TOUCH_CONTROL) {
+                    mActiveCard.setOnTouchListener(flingCardListener);
+                } else {
+                    mActiveCard.setOnTouchListener(null);
+                }
             }
         }
     }

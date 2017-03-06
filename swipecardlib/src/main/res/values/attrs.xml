@@ -10,6 +10,7 @@
         <attr name="right_swipe_detect" format="boolean"/>
         <attr name="top_swipe_detect" format="boolean"/>
         <attr name="bottom_swipe_detect" format="boolean"/>
+        <attr name="enable_touch_control" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="SwipePageView">
