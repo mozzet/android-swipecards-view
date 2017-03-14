@@ -14,9 +14,9 @@ import android.widget.FrameLayout;
 public class SwipeCardView extends BaseFlingAdapterView {
 
 
-    private static final double SCALE_OFFSET = 0.04;
+    private double SCALE_OFFSET = 0.05;
 
-    private static final float TRANS_OFFSET = 45;
+    private float TRANS_OFFSET = 45;
 
     protected boolean DETECT_BOTTOM_SWIPE;
 
@@ -83,6 +83,8 @@ public class SwipeCardView extends BaseFlingAdapterView {
         DETECT_BOTTOM_SWIPE = a.getBoolean(R.styleable.SwipeCardView_bottom_swipe_detect, true);
         DETECT_TOP_SWIPE = a.getBoolean(R.styleable.SwipeCardView_top_swipe_detect, true);
         ENABLE_TOUCH_CONTROL = a.getBoolean(R.styleable.SwipeCardView_enable_touch_control, true);
+        TRANS_OFFSET = a.getInt(R.styleable.SwipeCardView_trans_offset, 45);
+        SCALE_OFFSET = a.getFloat(R.styleable.SwipeCardView_scale_offset, 0.05f);
         a.recycle();
     }
 

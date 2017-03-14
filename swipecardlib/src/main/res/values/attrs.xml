@@ -11,6 +11,8 @@
         <attr name="top_swipe_detect" format="boolean"/>
         <attr name="bottom_swipe_detect" format="boolean"/>
         <attr name="enable_touch_control" format="boolean"/>
+        <attr name="trans_offset" format="integer"/>
+        <attr name="scale_offset" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="SwipePageView">
